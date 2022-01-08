@@ -1,0 +1,13 @@
+#cardEffect{
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-radius: 20px;
+}
+
+#cardEffect:hover{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.shapeImageofUser{
+    border-radius: 50%;
+    cursor: pointer;
+}
