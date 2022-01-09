@@ -10,7 +10,7 @@ function Home() {
             <img src="/SocialBird.png" width="40px" height="40px" alt="" />
             ReactProject
           </Link>
-          <Link to="/userprofile" >
+          <Link to="/userprofile">
             <img
               src="/userprofile.png"
               width="40px"
@@ -18,8 +18,6 @@ function Home() {
               alt="Loading..."
             />
           </Link>
-
-          
         </div>
       </nav>
     </div>

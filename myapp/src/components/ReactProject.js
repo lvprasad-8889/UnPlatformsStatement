@@ -9,7 +9,9 @@ import Modal from "./Modal";
 import Follow from "./Follow";
 import Data from "./Data";
 import Views from "./Views";
+
 const ReactProject = () => {
+  //variable to display comment box
   const commentStatus = useSelector((state) => state.displayComment);
 
   return (

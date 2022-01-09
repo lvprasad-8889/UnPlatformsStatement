@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import PostData from "../PostData.json";
 const Follow = () => {
   const [state, setstate] = useState(false);
 
@@ -10,7 +10,7 @@ const Follow = () => {
     <div className="">
       <span>
         <h5>
-          Horng H Chen
+          {PostData[0].username}
           {!state && (
             <button className="btn btn-outline-info ms-2  " onClick={follow}>
               Follow
@@ -23,10 +23,7 @@ const Follow = () => {
           )}
         </h5>
       </span>
-      <p className="text-muted">
-        Alum | Finance,MBA | 2016 | Business Manager at Capgemini 1d | San
-        Francisco
-      </p>
+      <p className="text-muted">{PostData[0].personalInfo}</p>
     </div>
   );
 };

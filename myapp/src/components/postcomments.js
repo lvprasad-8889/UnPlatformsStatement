@@ -7,7 +7,9 @@ import { toast } from "react-toastify";
 import "./postcomments.css";
 
 const PostComments = () => {
-  const getId=useSelector((state)=>state.data[0].id);
+  //getting Id from store
+  const getId = useSelector((state) => state.data[0].id);
+  //array of comments getting from store
   const allcommentsData = useSelector((state) => state.commentsData);
   const dispatch = useDispatch();
 
@@ -17,23 +19,28 @@ const PostComments = () => {
   function handleChange(event) {
     setcomment(event.target.value);
     if (event.target.value.trim().length > 0) {
+      //enabling user to submit data
       setvisibility(false);
     } else if (event.target.value.trim().length === 0) {
+      //not enabling user to submit data
       setvisibility(true);
     }
   }
-
+  //submitting data
   function handleSubmit(event) {
+    //preventing page to refresh
     event.preventDefault();
-
+    //converting date object to string
     const dateObject = new Date().toLocaleString();
 
     const commentsObject = {
       timeStamp: dateObject,
       comment: comment.trim(),
     };
+    //adding old comments and new comment
     const completeCommentData = [...allcommentsData, commentsObject];
 
+    //adding comments to the database
     axios
       .put(`http://localhost:3001/server/edit/${getId}`, completeCommentData)
       .then((message) => {
@@ -47,6 +54,7 @@ const PostComments = () => {
         console.error("error in updating comments to server : ", err);
       });
 
+    //over writing data in the store
     dispatch(actions.getCommentData(completeCommentData));
     setcomment("");
     setvisibility(true);

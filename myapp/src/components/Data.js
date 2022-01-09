@@ -1,4 +1,5 @@
 import { useState } from "react";
+import PostData from "../PostData.json";
 
 const Data = () => {
   const [displayText, setdisplayText] = useState(false);
@@ -7,12 +8,9 @@ const Data = () => {
   };
   return (
     <div className="">
-      <p className="text-start ml-2 text-black-50">
-        The concept of Research : A cross-cultural study
-      </p>
+      <p className="text-start ml-2 text-black-50">{PostData[0].title}</p>
       <p className="text-start ml-2">
-        Oxford Nanopore has pulled in £100m from investors in the Aisa-Pacific
-        region ,as it completes a funding round that values
+        {PostData[0].description}
         {!displayText && (
           <span>
             ...{" "}
@@ -24,7 +22,7 @@ const Data = () => {
         {displayText && (
           <span>
             {" "}
-            the fast-growing UK biotechnology company at £1.5bn.{" "}
+            {PostData[0].descriptionContinuation}{" "}
             <span
               className="changeCursor  text-primary"
               onClick={changeDisplay}

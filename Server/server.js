@@ -1,20 +1,36 @@
-const express = require('express');
-const app = express();
-const db = require("./models");
-const port = process.env.PORT || 3001
-const cors =require('cors')
+//import express module to create a server
+const express = require("express");
 
-app.use(cors())
-app.use(express.urlencoded({extended:true}));
+const app = express();
+
+const db = require("./models");
+
+const port = 3001;
+
+//import cors module
+const cors = require("cors");
+
+//middleware-1
+app.use(cors());
+
+//middleware-2
+app.use(express.urlencoded({ extended: true }));
+
+//middleware-3
 app.use(express.json());
 
-const userApi = require('./userApi');
-app.use("/server",userApi)
+//importing userApi file
+const userApi = require("./userApi");
 
-db.sequelize.sync()
-.then(()=>{
-    app.listen(port,()=>{
-        console.log(`Listening on http://localhost:${port}`);
-    })
-})
-.catch(err=>console.log("Error in database connection :",err))
+//onnection to userApi
+app.use("/server", userApi);
+
+//connecting to database
+db.sequelize
+  .sync()
+  .then(() => {
+    app.listen(port, () => {
+      console.log(`Listening on http://localhost:${port}`);
+    });
+  })
+  .catch((err) => console.log("Error in database connection : ", err));

@@ -1,6 +1,6 @@
-
 import Modal from "./Modal";
 import "./UserProfile.css";
+import UserData from "../UserData.json";
 const UserProfile = () => {
   return (
     <div className="">
@@ -25,8 +25,8 @@ const UserProfile = () => {
 
                     <Modal></Modal>
                     <div className=" text-center changeFontSizeTo">
-                      <div className=" mt-2">Preethi Shinde</div>
-                      <div>+91 XXXXXXXX46</div>
+                      <div className=" mt-2">{UserData[0].userName}</div>
+                      <div>{UserData[0].phoneNumber}</div>
                     </div>
                   </div>
                   <div className="col-sm-3"></div>
@@ -35,19 +35,19 @@ const UserProfile = () => {
                   <div className="col-sm-4">
                     <div className="text-center mt-2">
                       <div className="changeFontSizeTo">Posts</div>
-                      <p>100</p>
+                      <p>{UserData[0].numberOfPosts}</p>
                     </div>
                   </div>
                   <div className="col-sm-4">
                     <div className="text-center mt-2">
                       <div className="changeFontSizeTo">Following</div>
-                      <p>1233</p>
+                      <p>{UserData[0].numberOfFollowing}</p>
                     </div>
                   </div>
                   <div className="col-sm-4">
                     <div className="text-center mt-2">
                       <div className="changeFontSizeTo">Followers</div>
-                      <p>1233</p>
+                      <p>{UserData[0].numberOfFollowers}</p>
                     </div>
                   </div>
                 </div>

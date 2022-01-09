@@ -13,22 +13,23 @@ function Like() {
   const listen = () => {
     setLike(!like);
     //if (!like) {
-      let modifyLikes = Object.assign({}, fetchedData);
-      modifyLikes.likes++;
-      console.log(modifyLikes)
-      axios.put("http://localhost:3001/server/upd", modifyLikes)
-        .then((message) => {
-          toast("Liked added successfully", {
-            position: toast.POSITION.TOP_RIGHT,
-            type: toast.TYPE.SUCCESS,
-            autoClose: 2000,
-          });
-          dispatch(actions.getData([modifyLikes]));
-        })
-        .catch((err) => {
-          console.log("error in updating likes : ",err);
+    let modifyLikes = Object.assign({}, fetchedData);
+    modifyLikes.likes++;
+    console.log(modifyLikes);
+    axios
+      .put("http://localhost:3001/server/upd", modifyLikes)
+      .then((message) => {
+        toast("Liked added successfully", {
+          position: toast.POSITION.TOP_RIGHT,
+          type: toast.TYPE.SUCCESS,
+          autoClose: 2000,
         });
-    //} 
+        dispatch(actions.getData([modifyLikes]));
+      })
+      .catch((err) => {
+        console.log("error in updating likes : ", err);
+      });
+    //}
     // else {
     //   let modifyLikes = Object.assign({}, fetchedData);
     //   modifyLikes.likes--;
@@ -44,10 +45,10 @@ function Like() {
 
   return (
     <span className="">
-        <span className="btn changeCurser" onClick={listen}>
-          <i className="far fa-thumbs-up changeColour"></i> Like
-        </span>
-      
+      <span className="btn changeCurser" onClick={listen}>
+        <i className="far fa-thumbs-up changeColour"></i> Like
+      </span>
+
       {/* {like && (
         <span
           className="btn changeCurser "
