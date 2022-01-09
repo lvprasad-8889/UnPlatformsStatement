@@ -6,15 +6,9 @@
 #cardEffect:hover {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
-
-.shapeImageofUser {
-  border-radius: 50%;
-  cursor: pointer;
-}
-
-.changeFontSizeTo {
+.changeFontSize {
   font-weight: bold;
-}
-#cardEffectVersion {
-  border-radius: 20px;
+  background: linear-gradient(to right, #30cfd0 0%, #330867 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }

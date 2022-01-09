@@ -1,29 +1,28 @@
-.shapeImage{
-    cursor: pointer;
-    border-radius: 50%;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+.shapeImage {
+  cursor: pointer;
+  border-radius: 50%;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
-.shapeImage:hover{
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-}
-
-.cardMargin{
-    margin-top: 50px;
+.shapeImage:hover {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
-.changeCursor{
-    cursor: pointer;
+.cardMargin {
+  margin-top: 50px;
 }
 
-#cardEffect{
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-    border-radius: 20px;
+.changeCursor {
+  cursor: pointer;
 }
 
-#cardEffect:hover{
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-}
-.changeColour{
-    color: blue;
+#cardEffect {
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border-radius: 20px;
 }
 
+#cardEffect:hover {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.changeColour {
+  color: blue;
+}
